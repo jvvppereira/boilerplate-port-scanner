@@ -7,6 +7,7 @@ class UnitTests(unittest.TestCase):
         ports = port_scanner.get_open_ports("209.216.230.240", [440, 445], False)
         actual = ports
         expected = [443]
+        # not working yet
         self.assertEqual(actual, expected, 'Expected scanning ports of IP address to return [443].')
 
     def test_port_scanner_url(self):
@@ -25,18 +26,21 @@ class UnitTests(unittest.TestCase):
         str = port_scanner.get_open_ports("104.26.10.78", [440, 450], True)
         actual = str
         expected = "Open ports for 104.26.10.78\nPORT     SERVICE\n443      https"
+        # not working yet
         self.assertEqual(actual, expected, "Expected 'Open ports for 104.26.10.78\nPORT     SERVICE\n443      https'")
 
     def test_port_scanner_verbose_ip_hostname_returned_multiple_ports(self):
         str = port_scanner.get_open_ports("137.74.187.104", [440, 450], True)
         actual = str
         expected = "Open ports for hackthissite.org (137.74.187.104)\nPORT     SERVICE\n443      https"
+        # not working yet
         self.assertEqual(actual, expected, "Expected 'Open ports for hackthissite.org (137.74.187.104)\nPORT     SERVICE\n443      https'")
 
     def test_port_scanner_verbose_hostname_multiple_ports(self):
         str = port_scanner.get_open_ports("scanme.nmap.org", [20, 80], True)
         actual = str
         expected = "Open ports for scanme.nmap.org (45.33.32.156)\nPORT     SERVICE\n22       ssh\n80       http"
+        # not working yet
         self.assertEqual(actual, expected, "Expected 'Open ports for scanme.nmap.org (45.33.32.156)\nPORT     SERVICE\n22       ssh\n80       http'")
 
     def test_port_scanner_invalid_hostname(self):
