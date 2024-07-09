@@ -40,7 +40,6 @@ class UnitTests(unittest.TestCase):
         str = port_scanner.get_open_ports("scanme.nmap.org", [20, 80], True)
         actual = str
         expected = "Open ports for scanme.nmap.org (45.33.32.156)\nPORT     SERVICE\n22       ssh\n80       http"
-        # not working yet
         self.assertEqual(actual, expected, "Expected 'Open ports for scanme.nmap.org (45.33.32.156)\nPORT     SERVICE\n22       ssh\n80       http'")
 
     def test_port_scanner_invalid_hostname(self):
